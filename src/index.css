@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  color: #173e2b;
+  background: #f6f4ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: #f6f4ea;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+.field-lines {
+  background-image:
+    linear-gradient(115deg, transparent 45%, rgba(92, 116, 78, 0.055) 45.5%, transparent 46%),
+    linear-gradient(65deg, transparent 45%, rgba(92, 116, 78, 0.045) 45.5%, transparent 46%);
+  background-size: 110px 110px;
+}
+
+.quiz-grid {
+  background-image:
+    linear-gradient(rgba(64, 92, 70, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 92, 70, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.corn-badge {
+  background: linear-gradient(145deg, #f4e9bd, #e9d797);
+  box-shadow: inset 0 0 0 1px rgba(166, 139, 58, 0.12);
+}
+
+.home-paper-lines {
+  background-image:
+    linear-gradient(rgba(72, 94, 71, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 12% 24%, rgba(128, 153, 105, 0.1) 0 2px, transparent 2.5px);
+  background-size: 100% 34px, 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+
+.home-float {
+  animation: home-float 5s ease-in-out infinite;
+}
+
+.home-float-delayed {
+  animation-delay: -1.8s;
+}
+
+.home-float-soft {
+  animation-delay: -3.2s;
+}
+
+.home-leaf-sway {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: home-leaf-sway 4.8s ease-in-out infinite;
+}
+
+.home-leaf-sway-delayed {
+  animation-delay: -2.1s;
+}
+
+.home-reveal {
+  animation: home-reveal 520ms ease-out both;
+}
+
+.home-value-card {
+  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.home-value-card:hover {
+  transform: translateY(-3px);
+  border-color: #c9d6c2;
+  box-shadow: 0 18px 42px rgba(48, 71, 51, 0.1);
+}
+
+@keyframes home-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes home-leaf-sway {
+  0%,
+  100% {
+    rotate: -1deg;
+  }
+  50% {
+    rotate: 2deg;
+  }
+}
+
+@keyframes home-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-enter {
+  animation: question-in 360ms ease both;
+}
+
+@keyframes question-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
